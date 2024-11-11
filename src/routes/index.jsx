@@ -10,3 +10,5 @@ const routes = createBrowserRouter([
         element: <div>404</div>
     }
 ])
+
+export default routes;
