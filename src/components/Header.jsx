@@ -2,15 +2,16 @@ import React from 'react'
 import { FaBars } from "react-icons/fa6";
 import { CiSearch } from "react-icons/ci";
 import { FaMicrophone } from "react-icons/fa";
+import { IoIosNotifications } from "react-icons/io";
+import { MdEmergencyRecording } from "react-icons/md";
 
 // console.log(window)
 function Header() {
     return (
-        <div className='flex'>
-            <div className="">
+        <div className='flex justify-between items-center h-16 px-4 shadow-md'>
+            <div className="flex items-center">
                 <FaBars style={{ color: 'white', fontSize: '1.5rem' }} />
-            </div>
-            <div className="logo">
+
                 <svg xmlns="http://www.w3.org/2000/svg" id="yt-ringo2-svg_yt8" width="93" height="20" viewBox="0 0 93 20" focusable="false" aria-hidden="true" fill='white'>
                     <g>
                         <path d="M14.4848 20C14.4848 20 23.5695 20 25.8229 19.4C27.0917 19.06 28.0459 18.08 28.3808 16.87C29 14.65 29 9.98 29 9.98C29 9.98 29 5.34 28.3808 3.14C28.0459 1.9 27.0917 0.94 25.8229 0.61C23.5695 0 14.4848 0 14.4848 0C14.4848 0 5.42037 0 3.17711 0.61C1.9286 0.94 0.954148 1.9 0.59888 3.14C0 5.34 0 9.98 0 9.98C0 9.98 0 14.65 0.59888 16.87C0.954148 18.08 1.9286 19.06 3.17711 19.4C5.42037 20 14.4848 20 14.4848 20Z" fill="#FF0033"></path>
@@ -27,15 +28,30 @@ function Header() {
                     </g>
                 </svg>
             </div>
-            <div className="">
-                <input type="text" />
-                <button className=''>
-                    <CiSearch />
-                </button>
-                <div className="">
+            <div className="flex items-center ">
+                <div className="bg-[#212121] rounded-full h-[40px] w-[560px] flex items-center justify-between overflow-hidden">
+                    <form action="" className='w-full h-[40px] w-[560px] p-0.5'>
+                        <input type="text" className='bg-[#212121] rounded-full  rounded-tr-none rounded-br-none w-full h-full focus:outline focus:outline-1 focus:outline-teal-400 pl-2 text-white'  placeholder='Search'/>
+                    </form>
+                    <button className='text-white bg-green w-[50px] h-full pl-4 border-1 bg-[#ffffff14]'>
+                        <CiSearch />
+                    </button>
+                </div>
+                <div className="text-white">
                     <FaMicrophone />
                 </div>
+            </div>
 
+            <div className="flex items-center">
+                <div className="text-white">
+                    <MdEmergencyRecording />
+                </div>
+                <div className="text-white">
+                    <IoIosNotifications />
+                </div>
+                <div className="user rounded-full w-[60px] h-[40px] bg-blue">
+                    h
+                </div>
             </div>
 
         </div>

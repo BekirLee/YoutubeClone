@@ -2,7 +2,7 @@ import Header from "../../components/Header";
 
 export default function Home() {
     return (
-        <div className="">
+        <div className="bg-[#0f0f0f]">
             {/* Home */}
             <Header />
         </div>
