@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaBars } from "react-icons/fa6";
 import { CiSearch } from "react-icons/ci";
 import { FaMicrophone } from "react-icons/fa";
@@ -7,8 +7,10 @@ import { MdEmergencyRecording } from "react-icons/md";
 
 // console.log(window)
 function Header() {
+    const [isFocused, setIsFocused] = useState(false);
+
     return (
-        <div className='flex justify-between items-center h-16 px-4 shadow-md'>
+        <div className='flex justify-between items-center h-16 px-4 relative'>
             <div className="flex items-center">
                 <FaBars style={{ color: 'white', fontSize: '1.5rem' }} />
 
@@ -29,10 +31,17 @@ function Header() {
                 </svg>
             </div>
             <div className="flex items-center ">
-                <div className="bg-[#212121] rounded-full h-[40px] w-[560px] flex items-center justify-between overflow-hidden">
-                    <form action="" className='w-full h-[40px] w-[560px] p-0.5'>
-                        <input type="text" className='bg-[#212121] rounded-full  rounded-tr-none rounded-br-none w-full h-full focus:outline focus:outline-1 focus:outline-teal-400 pl-2 text-white'  placeholder='Search'/>
-                    </form>
+                <div className="bg-[#212121] rounded-full h-[40px] w-[560px] flex items-center justify-between overflow-hidden ">
+                    <div className=" group w-full h-[40px]">
+                        <button className={`text-white bg-[#ffffff14] w-[50px] md:h-[40px] m-auto  pl-4 border-1 absolute top-0 left-[390px] ${isFocused ? 'block' : 'hidden'} `}>
+                            <CiSearch />
+                        </button>
+                        <form action="" className='w-full h-full p-0.5'>
+                            <input type="text" className='bg-[#212121] rounded-full rounded-tr-none rounded-br-none w-full h-full focus:outline focus:outline-teal-400 pl-4 text-white' placeholder='Search'
+                                onFocus={() => setIsFocused(true)}
+                                onBlur={() => setIsFocused(false)} />
+                        </form>
+                    </div>
                     <button className='text-white bg-green w-[50px] h-full pl-4 border-1 bg-[#ffffff14]'>
                         <CiSearch />
                     </button>
@@ -54,7 +63,7 @@ function Header() {
                 </div>
             </div>
 
-        </div>
+        </div >
     )
 }
 
