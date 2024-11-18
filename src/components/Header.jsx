@@ -30,34 +30,37 @@ function Header() {
                     </g>
                 </svg>
             </div>
-            <div className="flex items-center">
-                <div className="rounded-full h-[40px] w-[560px] flex items-center justify-between overflow-hidden">
+            <div className="flex items-center w-[640px]">
+                <div className={`rounded-full h-[40px] w-[640px] flex items-center  overflow-hidden ${isFocused ? 'p-[2px 4px 2px 40px] justify-between' : 'ml-[40px]'}`}>
                     <form
-                        className={`w-full bg-[#212121] h-full flex items-center relative box-border ${isFocused ? 'border border-teal-400 pl-[40px]' : 'border border-transparent pl-[40px]'
+                        className={`w-[640px] bg-[#1e1e1e] h-full flex items-center relative box-border overflow-hidden ${isFocused
+                            ? 'border border-[#1c62b9] pl-[50px] py-3 rounded-tl-full rounded-bl-full rounded-tr-none rounded-br-none'
+                            : ''
                             }`}
                     >
+
                         <button
                             type="button"
-                            className={`text-white bg-[#ffffff14] w-[50px] h-full flex items-center justify-center absolute left-0 ${isFocused ? 'block' : 'hidden'
+                            className={`text-white bg-[#1e1e1e] w-[40px] pl-4 h-full flex items-center  absolute left-0 ${isFocused ? 'block' : 'hidden'
                                 }`}
                         >
-                            <CiSearch size={20} />
+                            <CiSearch size={19} />
                         </button>
                         <input
                             type="text"
-                            className="bg-[#212121] rounded-full w-full h-full text-white border-none focus:outline-none focus:ring-0 focus:border-none pl-5 pr-4 outline-none"
+                            className={`bg-[#1e1e1e]  w-full h-full text-white  ${isFocused ? 'border-none focus:outline-none focus:ring-0 focus:border-none outline-none w-[640px]' : 'rounded-full pl-3'}`}
                             placeholder="Search"
                             onFocus={() => setIsFocused(true)}
                             onBlur={() => setIsFocused(false)}
                         />
                     </form>
 
-                    <button className="text-white bg-green w-[50px] h-full pl-4 border-1 bg-[#ffffff14]">
-                        <CiSearch />
+                    <button className="text-white flex items-center bg-green w-[60px] h-full p-[10px] border-1 bg-[#303030]">
+                        <CiSearch className='w-[40px]' />
                     </button>
                 </div>
 
-                <div className="text-white">
+                <div className="text-white h-full ml-[20px]">
                     <FaMicrophone />
                 </div>
             </div >
