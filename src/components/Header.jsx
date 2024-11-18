@@ -30,26 +30,37 @@ function Header() {
                     </g>
                 </svg>
             </div>
-            <div className="flex items-center ">
-                <div className="bg-[#212121] rounded-full h-[40px] w-[560px] flex items-center justify-between overflow-hidden ">
-                    <div className=" group w-full h-[40px]">
-                        <button className={`text-white bg-[#ffffff14] w-[50px] md:h-[40px] m-auto  pl-4 border-1 absolute top-0 left-[390px] ${isFocused ? 'block' : 'hidden'} `}>
-                            <CiSearch />
+            <div className="flex items-center">
+                <div className="rounded-full h-[40px] w-[560px] flex items-center justify-between overflow-hidden">
+                    <form
+                        className={`w-full bg-[#212121] h-full flex items-center relative box-border ${isFocused ? 'border border-teal-400 pl-[40px]' : 'border border-transparent pl-[40px]'
+                            }`}
+                    >
+                        <button
+                            type="button"
+                            className={`text-white bg-[#ffffff14] w-[50px] h-full flex items-center justify-center absolute left-0 ${isFocused ? 'block' : 'hidden'
+                                }`}
+                        >
+                            <CiSearch size={20} />
                         </button>
-                        <form action="" className='w-full h-full p-0.5'>
-                            <input type="text" className='bg-[#212121] rounded-full rounded-tr-none rounded-br-none w-full h-full focus:outline focus:outline-teal-400 pl-4 text-white' placeholder='Search'
-                                onFocus={() => setIsFocused(true)}
-                                onBlur={() => setIsFocused(false)} />
-                        </form>
-                    </div>
-                    <button className='text-white bg-green w-[50px] h-full pl-4 border-1 bg-[#ffffff14]'>
+                        <input
+                            type="text"
+                            className="bg-[#212121] rounded-full w-full h-full text-white border-none focus:outline-none focus:ring-0 focus:border-none pl-5 pr-4 outline-none"
+                            placeholder="Search"
+                            onFocus={() => setIsFocused(true)}
+                            onBlur={() => setIsFocused(false)}
+                        />
+                    </form>
+
+                    <button className="text-white bg-green w-[50px] h-full pl-4 border-1 bg-[#ffffff14]">
                         <CiSearch />
                     </button>
                 </div>
+
                 <div className="text-white">
                     <FaMicrophone />
                 </div>
-            </div>
+            </div >
 
             <div className="flex items-center">
                 <div className="text-white">
