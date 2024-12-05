@@ -60,8 +60,11 @@ function Header() {
                     </button>
                 </div>
 
-                <div className="text-white h-full ml-[20px]">
+                <div className="relative group text-white h-full ml-[20px] rounded-full p-3 bg-[#ffffff1a] hover:bg-[#ffffff32]">
                     <FaMicrophone />
+                    <div className="absolute hidden group-hover:block w-[10px] h-[10px] bg-white rounded-full top-10px right-0">
+                        <span>Voice search</span>
+                    </div>
                 </div>
             </div >
 
