@@ -11,8 +11,8 @@ function Header() {
 
     return (
         <div className='flex justify-between items-center h-16 px-4 relative'>
-            <div className="flex items-center">
-                <FaBars style={{ color: 'white', fontSize: '1.5rem' }} />
+            <div className="flex items-center gap-[30px]">
+                <svg xmlns="http://www.w3.org/2000/svg" fill='#fff' height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true" ><path d="M21 6H3V5h18v1zm0 5H3v1h18v-1zm0 6H3v1h18v-1z"></path></svg>
 
                 <svg xmlns="http://www.w3.org/2000/svg" id="yt-ringo2-svg_yt8" width="93" height="20" viewBox="0 0 93 20" focusable="false" aria-hidden="true" fill='white'>
                     <g>
@@ -33,7 +33,7 @@ function Header() {
             <div className="flex items-center w-[640px]">
                 <div className={`rounded-full h-[40px] w-[640px] flex items-center  overflow-hidden ${isFocused ? 'p-[2px 4px 2px 40px] justify-between' : 'ml-[40px]'}`}>
                     <form
-                        className={`w-[640px] bg-[#1e1e1e] h-full flex items-center relative box-border overflow-hidden ${isFocused
+                        className={`w-[640px] bg-[#121212] h-full flex items-center relative box-border overflow-hidden rounded-tl-full rounded-bl-full border-solid   ${isFocused
                             ? 'border border-[#1c62b9] pl-[50px] py-3 rounded-tl-full rounded-bl-full rounded-tr-none rounded-br-none'
                             : ''
                             }`}
@@ -48,7 +48,7 @@ function Header() {
                         </button>
                         <input
                             type="text"
-                            className={`bg-[#1e1e1e]  w-full h-full text-white  ${isFocused ? 'border-none focus:outline-none focus:ring-0 focus:border-none outline-none w-[640px]' : 'rounded-full pl-3'}`}
+                            className={`bg-[#1e1e1e08] w-full h-full text-white  ${isFocused ? 'border-none focus:outline-none focus:ring-0 focus:border-none outline-none w-[640px]' : 'rounded-full pl-3'}`}
                             placeholder="Search"
                             onFocus={() => setIsFocused(true)}
                             onBlur={() => setIsFocused(false)}
@@ -62,21 +62,21 @@ function Header() {
 
                 <div className="relative group text-white h-full ml-[20px] rounded-full p-3 bg-[#ffffff1a] hover:bg-[#ffffff32]">
                     <FaMicrophone />
-                    <div className="absolute hidden group-hover:block w-[10px] h-[10px] bg-white rounded-full top-10px right-0">
-                        <span>Voice search</span>
+                    <div className="absolute hidden group-hover:block bg-[#ffffff32] top-[55px] left-[-25px]">
+                        <span className='whitespace-nowrap'>Voice search</span>
                     </div>
                 </div>
             </div >
 
             <div className="flex items-center">
-                <div className="text-white">
-                    <MdEmergencyRecording />
+                <div className="text-white w-[40px]">
+                    <MdEmergencyRecording size={22} />
                 </div>
-                <div className="text-white">
-                    <IoIosNotifications />
+                <div className="text-white w-[40px]">
+                    <IoIosNotifications size={22} />
                 </div>
-                <div className="user rounded-full w-[60px] h-[40px] bg-blue">
-                    h
+                <div className="w-[40px] h-[40px]">
+                    <div className="rounded-full text-white w-[31px] h-[31px] flex items-center justify-center bg-blue-700 m-auto mt-[6px]">N</div>
                 </div>
             </div>
 
