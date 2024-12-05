@@ -33,8 +33,8 @@ function Header() {
             <div className="flex items-center w-[640px]">
                 <div className={`rounded-full h-[40px] w-[640px] flex items-center  overflow-hidden ${isFocused ? 'p-[2px 4px 2px 40px] justify-between' : 'ml-[40px]'}`}>
                     <form
-                        className={`w-[640px] bg-[#121212] h-full flex items-center relative box-border overflow-hidden rounded-tl-full rounded-bl-full border-solid   ${isFocused
-                            ? 'border border-[#1c62b9] pl-[50px] py-3 rounded-tl-full rounded-bl-full rounded-tr-none rounded-br-none'
+                        className={`w-[640px] bg-[#121212] h-full flex items-center relative box-border overflow-hidden rounded-tl-full rounded-bl-full border-solid border border-[#303030]  ${isFocused
+                            ? 'border !border-[#1c62b9] pl-[50px] py-3 rounded-tl-full rounded-bl-full rounded-tr-none rounded-br-none'
                             : ''
                             }`}
                     >
