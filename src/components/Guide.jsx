@@ -15,33 +15,60 @@ function Guide() {
     return (
         <div className='sections w-[240px] h-full py-3'>
             <div className="items">
-                <div className="mainBtns">
-                    <div className="item flex w-[200px] h-[40px] px-4">
+                <div className="mainBtns pb-3">
+                    <div className="item flex w-[200px] h-[40px] bg-[#ffffff1a] ml-2 rounded-lg py-2 pl-2 hover:bg-[#3d3d3d]">
                         <IoMdHome style={{ color: "white", fontSize: "24px" }} />
                         <span className='text-white ml-3'>Home</span>
                     </div>
-                    <div className="flex w-[200px] h-[40px] px-4">
+                    <div className="flex w-[200px] h-[40px] ml-2 rounded-lg py-2 pl-2 hover:bg-[#3d3d3d]">
                         <SiYoutubeshorts style={{ color: "white", fontSize: "24px" }} />
                         <span className='text-white ml-3'>Shorts</span>
                     </div>
 
-                    <div className="flex w-[200px] h-[40px] px-4">
+                    <div className="flex w-[200px] h-[40px] ml-2 rounded-lg py-2 pl-2 hover:bg-[#3d3d3d]">
                         <BiSolidVideos style={{ color: "white", fontSize: "24px" }} />
                         <span className='text-white ml-3'>Subscribers</span>
                     </div>
 
                 </div>
-                <FaHistory />
-                <LuListVideo />
-                <MdOutlineVideoStable />
-                <MdOutlineWatchLater />
-                <AiOutlineLike />
+
+                <div className="forUs  border-t-2 border-solid border-[#fff3] pt-3">
+                    <div className="">
+                        <span className='text-white font-bold'>For You</span>
+                    </div>
+
+                    <div className="item flex w-[200px] h-[40px] ml-2 rounded-lg py-2 pl-2 hover:bg-[#3d3d3d]">
+                        <FaHistory style={{ color: "white", fontSize: "24px" }} />
+                        <span className='text-white ml-3'>History</span>
+                    </div>
+
+                    <div className="item flex w-[200px] h-[40px] ml-2 rounded-lg py-2 pl-2 hover:bg-[#3d3d3d]">
+                        <LuListVideo style={{ color: "white", fontSize: "24px" }} />
+                        <span className='text-white ml-3'>Play List</span>
+                    </div>
+
+                    <div className="item flex w-[200px] h-[40px] ml-2 rounded-lg py-2 pl-2 hover:bg-[#3d3d3d]">
+                        <MdOutlineVideoStable style={{ color: "white", fontSize: "24px" }} />
+                        <span className='text-white ml-3'>Ur Videos</span>
+                    </div>
+
+                    <div className="item flex w-[200px] h-[40px] ml-2 rounded-lg py-2 pl-2 hover:bg-[#3d3d3d]">
+                        <MdOutlineWatchLater style={{ color: "white", fontSize: "24px" }} />
+                        <span className='text-white ml-3'>Later Videos</span>
+                    </div>
+
+                    <div className="item flex w-[200px] h-[40px] ml-2 rounded-lg py-2 pl-2 hover:bg-[#3d3d3d]">
+                        <AiOutlineLike style={{ color: "white", fontSize: "24px" }} />
+                        <span className='text-white ml-3'>Liked Ones</span>
+                    </div>
+
+                </div>
 
 
 
                 <SiTrendmicro />
                 <IoMusicalNotesOutline />
-                <span className="yt-icon-shape style-scope yt-icon yt-spec-icon-shape"><div bis_skin_checked="1"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true" ><path clip-rule="evenodd" d="M5.636 5.636c.293-.293.293-.768 0-1.06-.293-.294-.768-.294-1.06 0-.976.974-1.75 2.132-2.277 3.406C1.772 9.256 1.5 10.622 1.5 12c0 1.379.272 2.744.8 4.018.527 1.274 1.3 2.432 2.275 3.407.293.293.768.293 1.061 0 .293-.293.293-.768 0-1.061-.836-.836-1.499-1.828-1.95-2.92C3.232 14.352 3 13.182 3 12s.233-2.352.685-3.444c.452-1.092 1.115-2.084 1.951-2.92Zm2.828 1.768c.293.292.293.767 0 1.06-.464.464-.832 1.016-1.083 1.622C7.129 10.693 7 11.343 7 12c0 .656.13 1.306.38 1.913.252.607.62 1.158 1.084 1.622.293.293.293.768 0 1.06-.292.294-.767.294-1.06 0-.604-.603-1.083-1.32-1.41-2.108C5.669 13.7 5.5 12.853 5.5 12c0-.854.168-1.7.495-2.488.326-.788.805-1.505 1.409-2.108.293-.293.768-.293 1.06 0Zm7.072 0c.292-.293.767-.293 1.06 0C17.816 8.623 18.5 10.276 18.5 12c0 1.724-.685 3.377-1.904 4.596-.293.293-.768.293-1.06 0-.293-.293-.293-.768 0-1.06C16.473 14.597 17 13.325 17 12s-.527-2.598-1.464-3.536c-.293-.293-.293-.768 0-1.06Zm2.828-2.829c.293-.293.768-.293 1.06 0C21.395 6.545 22.5 9.215 22.5 12s-1.106 5.456-3.075 7.425c-.293.293-.768.293-1.061 0-.293-.293-.293-.768 0-1.061C20.052 16.676 21 14.387 21 12s-.948-4.676-2.636-6.364c-.293-.293-.293-.768 0-1.06ZM12 14c1.105 0 2-.895 2-2 0-1.104-.895-2-2-2s-2 .896-2 2c0 1.105.895 2 2 2Z" fill-rule="evenodd"></path></svg></div></span>
+                <span className="yt-icon-shape style-scope yt-icon yt-spec-icon-shape"><div bis_skin_checked="1"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true" ><path clipRule="evenodd" d="M5.636 5.636c.293-.293.293-.768 0-1.06-.293-.294-.768-.294-1.06 0-.976.974-1.75 2.132-2.277 3.406C1.772 9.256 1.5 10.622 1.5 12c0 1.379.272 2.744.8 4.018.527 1.274 1.3 2.432 2.275 3.407.293.293.768.293 1.061 0 .293-.293.293-.768 0-1.061-.836-.836-1.499-1.828-1.95-2.92C3.232 14.352 3 13.182 3 12s.233-2.352.685-3.444c.452-1.092 1.115-2.084 1.951-2.92Zm2.828 1.768c.293.292.293.767 0 1.06-.464.464-.832 1.016-1.083 1.622C7.129 10.693 7 11.343 7 12c0 .656.13 1.306.38 1.913.252.607.62 1.158 1.084 1.622.293.293.293.768 0 1.06-.292.294-.767.294-1.06 0-.604-.603-1.083-1.32-1.41-2.108C5.669 13.7 5.5 12.853 5.5 12c0-.854.168-1.7.495-2.488.326-.788.805-1.505 1.409-2.108.293-.293.768-.293 1.06 0Zm7.072 0c.292-.293.767-.293 1.06 0C17.816 8.623 18.5 10.276 18.5 12c0 1.724-.685 3.377-1.904 4.596-.293.293-.768.293-1.06 0-.293-.293-.293-.768 0-1.06C16.473 14.597 17 13.325 17 12s-.527-2.598-1.464-3.536c-.293-.293-.293-.768 0-1.06Zm2.828-2.829c.293-.293.768-.293 1.06 0C21.395 6.545 22.5 9.215 22.5 12s-1.106 5.456-3.075 7.425c-.293.293-.768.293-1.061 0-.293-.293-.293-.768 0-1.061C20.052 16.676 21 14.387 21 12s-.948-4.676-2.636-6.364c-.293-.293-.293-.768 0-1.06ZM12 14c1.105 0 2-.895 2-2 0-1.104-.895-2-2-2s-2 .896-2 2c0 1.105.895 2 2 2Z" fillRule="evenodd"></path></svg></div></span>
                 <IoGameControllerOutline />
                 <TfiCup />
                 <IoSettingsOutline />
@@ -50,7 +77,7 @@ function Guide() {
                 <GoReport />
 
                 {/*yt premium icon */}
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" focusable="false" aria-hidden="true" >
+                <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enableBackground="new 0 0 24 24" xmlSpace="preserve" focusable="false" aria-hidden="true" >
                     <g>
                         <path fill="#FF0033" d="M21.58,7.19c-0.23-0.86-0.91-1.54-1.77-1.77C18.25,5,12,5,12,5S5.75,5,4.19,5.42   C3.33,5.65,2.65,6.33,2.42,7.19C2,8.75,2,12,2,12s0,3.25,0.42,4.81c0.23,0.86,0.91,1.54,1.77,1.77C5.75,19,12,19,12,19   s6.25,0,7.81-0.42c0.86-0.23,1.54-0.91,1.77-1.77C22,15.25,22,12,22,12S22,8.75,21.58,7.19z"></path>
                         <polygon fill="#FFFFFF" points="10,15 15,12 10,9  "></polygon>
@@ -58,7 +85,7 @@ function Guide() {
                 </svg>
 
                 {/* yt studio */}
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" focusable="false" aria-hidden="true" >
+                <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enableBackground="new 0 0 24 24" xmlSpace="preserve" focusable="false" aria-hidden="true" >
                     <g>
                         <path fill="#FF0033" d="M11.13,1.21c0.48-0.28,1.26-0.28,1.74,0l8.01,4.64c0.48,0.28,0.87,0.97,0.87,1.53v9.24   c0,0.56-0.39,1.25-0.87,1.53l-8.01,4.64c-0.48,0.28-1.26,0.28-1.74,0l-8.01-4.64c-0.48-0.28-0.87-0.97-0.87-1.53V7.38   c0-0.56,0.39-1.25,0.87-1.53L11.13,1.21z"></path>
                         <polygon fill="#FFFFFF" points="10,15 15,12 10,9  "></polygon>
@@ -67,7 +94,7 @@ function Guide() {
                 </svg>
 
                 {/* yt kids */}
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" focusable="false" aria-hidden="true" >
+                <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enableBackground="new 0 0 24 24" xmlSpace="preserve" focusable="false" aria-hidden="true" >
                     <g>
                         <circle id="XMLID_4814__yt123" fill="#FF0033" cx="12" cy="12" r="11"></circle>
                         <path fill="#FFFFFF" d="M12,6.25c3.17,0,5.75,2.58,5.75,5.75s-2.58,5.75-5.75,5.75S6.25,15.17,6.25,12S8.83,6.25,12,6.25 M12,5.25   c-3.73,0-6.75,3.02-6.75,6.75s3.02,6.75,6.75,6.75s6.75-3.02,6.75-6.75S15.73,5.25,12,5.25L12,5.25z"></path>
@@ -76,7 +103,7 @@ function Guide() {
                 </svg>
 
                 {/* yt music */}
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" focusable="false" aria-hidden="true" >
+                <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enableBackground="new 0 0 24 24" xmlSpace="preserve" focusable="false" aria-hidden="true" >
                     <g>
                         <g>
                             <path fill="#FF0033" d="M22.64,13.2c-0.01-1.04-0.62-5.98-0.9-6.74c-0.19-0.5-0.58-1.4-1.31-1.95c-0.94-0.7-1.7-0.83-2.68-0.85    C17.06,3.64,6.12,5.03,4.79,5.51C3.8,5.88,3.03,6.35,2.42,6.95c-0.99,0.98-1.18,1.93-1.02,3.6c0.14,1.52,0.85,6.55,1.21,7.59    c0.39,1.15,1.11,2.03,2.3,2.16c3.62,0.39,4.48-1.6,12.9-1.58c2.55,0.01,3.82-1.11,4.35-2.08C22.77,15.49,22.65,13.99,22.64,13.2z"></path>
