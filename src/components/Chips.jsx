@@ -43,12 +43,12 @@ function Chips() {
     };
 
     return (
-        <div className="chips relative pl-[260px] top-[-720px] flex w-full ml-[10px] mt-[20px] whitespace-nowrap">
+        <div className="chips relative pl-[230px] top-[-720px] flex w-full ml-[10px] mt-[20px] whitespace-nowrap">
             {!isStart && (
-                <div className="w-[31px] h-[30px]">
+                <div className="w-[55px] shadow-custom h-full absolute top-1/2 transform -translate-y-1/2  bg-[#0f0f0f]">
 
                     <HiChevronLeft
-                        className="hidden md:block text-3xl cursor-pointer text-gray-700 absolute top-1/2 transform -translate-y-1/2 bg-[#0f0f0f]"
+                        className="hidden md:block text-3xl cursor-pointer text-gray-700 "
                         onClick={sliderLeft}
                         size={30}
                     />
@@ -64,7 +64,7 @@ function Chips() {
                 {chips.map((chip) => (
                     <div
                         key={chip.id}
-                        className="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg font-medium cursor-pointer hover:bg-gray-300 transition"
+                        className="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg font-medium cursor-pointer hover:bg-gray-300 transition w-[1310px]"
                     >
                         {chip.chip}
                     </div>
@@ -72,10 +72,12 @@ function Chips() {
             </div>
 
             {!isEnd && (
-                <HiChevronRight
-                    className="hidden md:block text-3xl cursor-pointer text-gray-700 absolute top-1/2 transform -translate-y-1/2 right-0"
-                    onClick={sliderRight}
-                />
+                <div className="w-[55px] shadow-custom h-full absolute top-1/2 transform -translate-y-1/2 right-1 bg-[#0f0f0f]">
+                    <HiChevronRight
+                        className="hidden md:block text-3xl cursor-pointer text-gray-700 "
+                        onClick={sliderRight}
+                    />
+                </div>
             )}
         </div>
     );
