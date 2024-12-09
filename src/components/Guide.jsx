@@ -14,10 +14,8 @@ import { GoReport } from "react-icons/go";
 function Guide() {
     return (
         <div className='sections w-[240px] h-full py-3 '>
-            <div className="items h-screen overflow-y-auto overflow-hidden scrollbar-thin scrollbar-track-transparent group relative">
-                <div className="absolute top-0 right-0 w-2 bg-transparent group-hover:bg-gray-500 transition-all duration-300">
-                    {/* <!-- Kaydırma çubuğu görselleştirme --> */}
-                </div>
+            <div className="items h-screen overflow-y-auto scrollbar-hide hover:scrollbar-thin hover:scrollbar-transparent  group relative">
+
                 <div className="mainBtns pb-3">
                     <div className="item flex w-[200px] h-[40px] bg-[#ffffff1a] ml-2 rounded-lg py-2 pl-2 hover:bg-[#3d3d3d]">
                         <IoMdHome style={{ color: "white", fontSize: "24px" }} />
