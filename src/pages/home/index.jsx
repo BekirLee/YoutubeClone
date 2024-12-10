@@ -1,6 +1,7 @@
 import Chips from "../../components/Chips";
 import Guide from "../../components/Guide";
 import Header from "../../components/Header";
+import YouTubeVideos from "../../components/YoutubeVideos";
 
 export default function Home() {
     return (
@@ -11,6 +12,7 @@ export default function Home() {
                 <Guide />
                 <Chips />
             </div>
+            <YouTubeVideos />
         </div>
     )
 }
