@@ -43,19 +43,16 @@ function Chips() {
     };
 
     return (
-        <div className="chips relative pl-[230px] top-[-720px] flex w-full ml-[10px] mt-[20px] whitespace-nowrap">
+        <div className="chips !fixed pl-[230px] top-[60px] flex w-full ml-[10px] whitespace-nowrap bg-[#0f0f0f] z-10">
             {!isStart && (
                 <div className="flex w-[40px] h-full absolute top-1/2 transform -translate-y-1/2 bg-[#0f0f0f] group"
-                    style={{ boxShadow: "rgba(15 15 15) 20px 0px 12px 6px" }}>
+                    style={{ boxShadow: "rgb(15, 15, 15) 20px -9px 12px 6px" }}>
                     <HiChevronLeft
                         className="hidden md:block text-3xl cursor-pointer text-white mt-4 group-hover:rounded-full group-hover:bg-[#fff3]"
                         onClick={sliderLeft}
                         size={30}
                     />
                 </div>
-
-
-
             )}
 
             {/* Chips Container */}

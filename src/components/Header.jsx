@@ -11,7 +11,9 @@ function Header() {
 
     return (
 
-            <div className='flex justify-between items-center h-16 px-4 relative '>
+        <div className='flex justify-between items-center h-16 px-4 relative z-20 bg-[#0f0f0f]'>
+            {/* <div className="fixed"> */}
+
                 <div className="flex items-center gap-[30px]">
                     <svg xmlns="http://www.w3.org/2000/svg" fill='#fff' height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true" ><path d="M21 6H3V5h18v1zm0 5H3v1h18v-1zm0 6H3v1h18v-1z"></path></svg>
 
@@ -80,8 +82,9 @@ function Header() {
                         <div className="rounded-full text-white w-[31px] h-[31px] flex items-center justify-center bg-blue-700 m-auto mt-[6px]">N</div>
                     </div>
                 </div>
-            </div>
+            {/* </div> */}
+        </div>
     )
 }
 
-export default Header
+export default Header   

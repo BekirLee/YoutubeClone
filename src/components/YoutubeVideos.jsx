@@ -23,11 +23,11 @@ function YouTubeVideos() {
     }, []);
 
     return (
-        <div className="bg-white p-4 z-[12] pt-[120px] pl-[240px]">
+        <div className="relative top-[175px] left-[240px] w-full bg-[#0f0f0f] z-[9]">
             {videos.map((video) => (
                 <div key={video.id}>
                     <h3 className="text-xl font-bold text-white">{video.snippet.title}</h3>
-                    <img src={video.snippet.thumbnails.medium.url} alt={video.snippet.title} />
+                    <img className="rounded-lg" src={video.snippet.thumbnails.medium.url} alt={video.snippet.title} />
                 </div>
             ))}
         </div>
