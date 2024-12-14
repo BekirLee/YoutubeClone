@@ -43,7 +43,7 @@ function Chips() {
     };
 
     return (
-        <div className="chips !fixed pl-[230px] top-[60px] flex w-full ml-[10px] whitespace-nowrap bg-[#0f0f0f] z-10">
+        <div className="chips !fixed pl-[230px] top-[60px] flex w-full ml-9 whitespace-nowrap bg-[#0f0f0f] z-10">
             {!isStart && (
                 <div className="flex w-[40px] h-full absolute top-1/2 transform -translate-y-1/2 bg-[#0f0f0f] group"
                     style={{ boxShadow: "rgb(15, 15, 15) 20px -9px 12px 6px" }}>
@@ -73,7 +73,7 @@ function Chips() {
             </div>
 
             {!isEnd && (
-                <div className="w-[40px]  h-full absolute top-1/2 transform -translate-y-1/2 right-1 bg-[#0f0f0f] transition-shadow group"
+                <div className="w-[40px]  h-full absolute top-1/2 transform -translate-y-1/2 right-[30px] bg-[#0f0f0f] transition-shadow group"
                     style={{ boxShadow: "rgb(15, 15, 15) -20px 1px 12px 6px" }}>
 
                     <HiChevronRight

@@ -1,55 +1,12 @@
-// import React, { useEffect, useState } from "react";
-// import axios from "axios";
-
-// function YouTubeVideos() {
-//     const [videos, setVideos] = useState([]);
-//     const API_KEY = "AIzaSyDcTsHci748ZR0kRdX7qK1jGZh9Vnno7g4";
-
-//     useEffect(() => {
-//         const fetchVideos = async () => {
-//             const response = await axios.get("https://www.googleapis.com/youtube/v3/videos", {
-//                 params: {
-//                     part: "snippet,statistics",
-//                     chart: "mostPopular",
-//                     regionCode: "US",
-//                     maxResults: 10,
-//                     key: API_KEY,
-//                 },
-//             });
-//             setVideos(response.data.items);
-//         };
-
-//         fetchVideos();
-//     }, []);
-
-//     return (
-//         <div className="relative top-[175px] left-[240px] w-full bg-[#0f0f0f] z-[9]">
-//             {videos.map((video) => (
-//                 <div key={video.id}>
-//                     <h3 className="text-xl font-bold text-white">{video.snippet.title}</h3>
-//                     <img className="rounded-lg" src={video.snippet.thumbnails.medium.url} alt={video.snippet.title} />
-//                 </div>
-//             ))}
-//         </div>
-//     );
-// }
-
-// export default YouTubeVideos;
-
-
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 function YouTubeVideos() {
     const [videos, setVideos] = useState([]);
-    const [nextPageToken, setNextPageToken] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const observerRef = useRef(null);
-
+    const [channelAvatars, setChannelAvatars] = useState({}); // Kanal avatarlarını tutar
     const API_KEY = "AIzaSyDcTsHci748ZR0kRdX7qK1jGZh9Vnno7g4";
 
-    const fetchVideos = async (token = null) => {
-        setLoading(true);
+    const fetchVideos = async () => {
         try {
             const response = await axios.get("https://www.googleapis.com/youtube/v3/videos", {
                 params: {
@@ -57,53 +14,68 @@ function YouTubeVideos() {
                     chart: "mostPopular",
                     regionCode: "US",
                     maxResults: 10,
-                    pageToken: token,
                     key: API_KEY,
                 },
             });
-            setVideos((prev) => [...prev, ...response.data.items]);
-            setNextPageToken(response.data.nextPageToken);
+
+            setVideos(response.data.items);
+
+            // Kanal avatarlarını toplu çekmek için kanal ID'lerini al
+            const channelIds = response.data.items.map((video) => video.snippet.channelId);
+            fetchChannelAvatars(channelIds);
         } catch (error) {
             console.error("Error fetching videos:", error);
-        } finally {
-            setLoading(false);
+        }
+    };
+
+    const fetchChannelAvatars = async (channelIds) => {
+        try {
+            const response = await axios.get("https://www.googleapis.com/youtube/v3/channels", {
+                params: {
+                    part: "snippet",
+                    id: channelIds.join(","), // Kanal ID'lerini virgülle ayırarak gönder
+                    key: API_KEY,
+                },
+            });
+
+            // Avatar URL'lerini sakla
+            const avatars = {};
+            response.data.items.forEach((channel) => {
+                avatars[channel.id] = channel.snippet.thumbnails.default.url; // Avatar URL
+            });
+            setChannelAvatars(avatars);
+        } catch (error) {
+            console.error("Error fetching channel avatars:", error);
         }
     };
 
     useEffect(() => {
-        fetchVideos(); // İlk videoları yükle
+        fetchVideos();
     }, []);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting && nextPageToken && !loading) {
-                fetchVideos(nextPageToken); // Scroll yapıldığında yeni videoları yükle
-            }
-        });
-
-        if (observerRef.current) {
-            observer.observe(observerRef.current);
-        }
-
-        return () => observer.disconnect(); // Cleanup observer
-    }, [nextPageToken, loading]);
 
     return (
         <div className="relative top-[175px] left-[240px] w-full bg-[#0f0f0f] z-[9]">
-            {videos.map((video, index) => (
-                <div key={index} className="mb-4">
+            {videos.map((video) => (
+                <div key={video.id} className="mb-4">
+                    <div className="avatar">
+                        {channelAvatars[video.snippet.channelId] ? (
+                            <img
+                                src={channelAvatars[video.snippet.channelId]}
+                                alt={video.snippet.channelTitle}
+                                className="rounded-full"
+                            />
+                        ) : (
+                            <p className="text-white">Loading...</p>
+                        )}
+                    </div>
                     <h3 className="text-xl font-bold text-white">{video.snippet.title}</h3>
                     <img
-                        src={video.snippet.thumbnails.medium.url} alt={video.snippet.title}
-                        className="lazy-load rounded-lg"
+                        src={video.snippet.thumbnails.medium.url}
+                        alt={video.snippet.title}
+                        className="rounded-lg"
                     />
                 </div>
             ))}
-
-            {/* Observer için boş bir div */}
-            <div ref={observerRef} style={{ height: "50px" }}></div>
-
-            {loading && <p className="text-white text-center">Yükleniyor...</p>}
         </div>
     );
 }

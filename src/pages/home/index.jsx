@@ -5,7 +5,7 @@ import YouTubeVideos from "../../components/YoutubeVideos";
 
 export default function Home() {
     return (
-        <div className="bg-[#0f0f0f] w-full h-full ">
+        <div className="bg-[#0f0f0f] w-full h-full">
             {/* Home */}
             <div className="fixed z-50 w-full bg-transparent">
                 <Header />

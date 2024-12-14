@@ -14,7 +14,7 @@ import { GoReport } from "react-icons/go";
 function Guide() {
     return (
         <div className='sections w-[240px] h-full pb-3 z-[20] bg-[#0f0f0f] relative'>
-            <div className="items h-screen overflow-y-auto scrollbar-hide hover:scrollbar-thin hover:scrollbar-transparent  group relative">
+            <div className="items h-screen overflow-y-auto scrollbar-hide hover:scrollbar-thin hover:scrollbar-transparent group relative">
 
                 <div className="mainBtns pb-3">
                     <div className="item flex w-[200px] h-[40px] bg-[#ffffff1a] ml-2 rounded-lg py-2 pl-2 hover:bg-[#3d3d3d]">
