@@ -12,7 +12,7 @@ function YouTubeVideos() {
                 params: {
                     part: "snippet,statistics",
                     chart: "mostPopular",
-                    regionCode: "US",
+                    regionCode: "TR",
                     maxResults: 10,
                     key: API_KEY,
                 },
@@ -54,26 +54,29 @@ function YouTubeVideos() {
     }, []);
 
     return (
-        <div className="relative top-[175px] left-[240px] w-full bg-[#0f0f0f] z-[9]">
+        <div className="relative top-[175px] left-[240px] bg-[#0f0f0f] z-[9] grid grid-cols-3 w-[1130px]">
             {videos.map((video) => (
                 <div key={video.id} className="mb-4">
-                    <div className="avatar">
-                        {channelAvatars[video.snippet.channelId] ? (
-                            <img
-                                src={channelAvatars[video.snippet.channelId]}
-                                alt={video.snippet.channelTitle}
-                                className="rounded-full"
-                            />
-                        ) : (
-                            <p className="text-white">Loading...</p>
-                        )}
-                    </div>
-                    <h3 className="text-xl font-bold text-white">{video.snippet.title}</h3>
                     <img
                         src={video.snippet.thumbnails.medium.url}
                         alt={video.snippet.title}
                         className="rounded-lg"
                     />
+                    <div className="content flex">
+
+                        <div className="avatar w-[40px] h-[40px]">
+                            {channelAvatars[video.snippet.channelId] ? (
+                                <img
+                                    src={channelAvatars[video.snippet.channelId]}
+                                    alt={video.snippet.channelTitle}
+                                    className="rounded-full"
+                                />
+                            ) : (
+                                <p className="text-white">Loading...</p>
+                            )}
+                        </div>
+                        <h3 className="text-xl font-bold text-white">{video.snippet.title}</h3>
+                    </div>
                 </div>
             ))}
         </div>
