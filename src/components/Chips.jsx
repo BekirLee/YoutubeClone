@@ -43,7 +43,7 @@ function Chips() {
     };
 
     return (
-        <div className="chips !fixed pl-[230px] top-[60px] flex w-full ml-9 whitespace-nowrap bg-[#0f0f0f] z-10">
+        <div className="chips !fixed pl-[230px] top-[60px] flex w-full ml-9 whitespace-nowrap bg-[#0f0f0f] z-[54]">
             {!isStart && (
                 <div className="flex w-[40px] h-full absolute top-1/2 transform -translate-y-1/2 bg-[#0f0f0f] group"
                     style={{ boxShadow: "rgb(15, 15, 15) 20px -9px 12px 6px" }}>

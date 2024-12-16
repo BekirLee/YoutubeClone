@@ -11,7 +11,7 @@ function Header() {
 
     return (
 
-        <div className='flex justify-between items-center h-16 px-4 relative z-20 bg-[#0f0f0f]'>
+        <div className='flex justify-between items-center h-16 px-4 fixed w-full z-[57] bg-[#0f0f0f]'>
             {/* <div className="fixed"> */}
 
                 <div className="flex items-center gap-[30px]">
