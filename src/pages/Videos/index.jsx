@@ -8,8 +8,8 @@ function Videos() {
     console.log(videoId)
 
     return (
-        <div className="container">
-            { 
+        <div className="container bg-[#0f0f0f] h-full">
+            {
                 <Header />
             }
             < div className="w-full max-w-4xl aspect-video" >

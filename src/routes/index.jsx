@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/home";
 import Videos from "../pages/Videos";
+import Channel from "../pages/channel";
 
 
 const routes = createBrowserRouter([
@@ -11,6 +12,10 @@ const routes = createBrowserRouter([
     {
         path: '/videos',
         element: <Videos />
+    },
+    {
+        path: '/channel',
+        element: <Channel />
     },
     {
         path: "/*",
