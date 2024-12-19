@@ -178,7 +178,7 @@ function YouTubeVideos() {
                                     <path d="M12 16.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm-1.5-4.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5zm0-6c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5z"></path>
                                 </svg>
                                 <div className="btnBar hidden bg-[#212121] top-9 left-0 absolute z-[10] w-[250px] rounded-lg pt-2 pb-2">
-                                    <div className="btnBarItem flex items-center w-[250px] bg-[#212121] rounded-lg px-3 h-9 hover:bg-[#2121215b]">
+                                    <div className="btnBarItem flex items-center w-[250px] bg-[#212121] rounded-lg px-3 h-9 hover:!bg-[#2121215b]">
                                         <div className="w-[40px] h-full">
                                             <svg xmlns="http://www.w3.org/2000/svg" className="h-full " fill="#fff" height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true" ><path d="M21 16h-7v-1h7v1zm0-5H9v1h12v-1zm0-4H3v1h18V7zm-11 8-7-4v8l7-4z"></path></svg>
                                         </div>
