@@ -86,10 +86,28 @@ function YouTubeVideos() {
         return number.toString();
     };
 
+    const parseDuration = (duration) => {
+        const match = duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
+        const hours = (match[1] || "").replace("H", "") || "0";
+        const minutes = (match[2] || "").replace("M", "") || "0";
+        const seconds = (match[3] || "").replace("S", "") || "0";
+
+        return `${hours !== "0" ? hours + ":" : ""}${minutes.padStart(2, "0")
+            }:${seconds.padStart(2, "0")}`;
+    };
+
+
     return (
         <div className="relative top-[175px] left-[240px] bg-[#0f0f0f] z-[9] grid grid-cols-3 w-[1130px]">
             {videos.map((video) => (
-                <div key={video.id} className="mb-14 mr-[35px] relative group">
+                <div
+                    key={video.id}
+                    className="mb-14 mr-[35px] relative group"
+                >
+                    <div className="absolute text-white bg-black rounded-lg p-0.5 bottom-28 right-2">
+                        {parseDuration(video.contentDetails.duration)}
+                    </div>
+
                     <Link to={`/videos?id=${video.id}`}>
                         <img
                             src={video.snippet.thumbnails.medium.url}
@@ -97,12 +115,16 @@ function YouTubeVideos() {
                             className="rounded-lg w-full"
                         />
                     </Link>
-                    {/* Hover Edildiğinde Gözükecek Video Önizlemesi
-                    <div className="absolute top-0 left-0 w-full h-full hidden group-hover:flex justify-center items-center">
+
+                    {/* {hover olanda videolara preview video} cox RAM yeyir yolun tap*/}
+                    {/* <div
+                        className="absolute top-0 left-0 w-full h-full hidden group-hover:block"
+                        style={{ zIndex: 10 }}
+                    >
                         <iframe
                             className="rounded-lg"
                             width="100%"
-                            height="100%"
+                            height="68%"
                             src={`https://www.youtube.com/embed/${video.id}?autoplay=1&mute=1&controls=0`}
                             title={video.snippet.title}
                             frameBorder="0"
@@ -111,12 +133,6 @@ function YouTubeVideos() {
                         ></iframe>
                     </div> */}
 
-                    <iframe
-                        src={`https://www.youtube.com/embed/${video.id}`}
-                        frameborder="0"
-                        allow="autoplay; encrypted-media; fullscreen"
-                        allowfullscreen
-                    ></iframe>
                     <div className="content flex items-center mt-2 h-24">
                         <div className="avatar w-[40px] h-[40px] mr-2 mb-[50px]">
                             {video.channelAvatar ? (
@@ -156,6 +172,7 @@ function YouTubeVideos() {
                         </div>
                     </div>
                 </div>
+
             ))}
             <div ref={observerRef} style={{ height: "50px" }}></div>
             {loading && <p className="text-white text-center">Yükleniyor...</p>}
