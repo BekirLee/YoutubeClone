@@ -9,9 +9,7 @@ function YouTubeVideos() {
     const [loading, setLoading] = useState(false);
     const observerRef = useRef(null);
 
-    const { videosSearch } = useContext(SearchContext);
 
-    const { searchQuery } = useContext(SearchContext);
     const API_KEY = "AIzaSyDcTsHci748ZR0kRdX7qK1jGZh9Vnno7g4";
 
     const fetchVideosAndChannels = async (pageToken = null) => {
@@ -62,15 +60,8 @@ function YouTubeVideos() {
     useEffect(() => {
         // console.log(searchQuery)
         // if (se) { }
-        if (searchQuery == '') {
-            // fetchVideosAndChannels(); // Yeni arama yap
-            fetchVideosAndChannels(); // Yeni arama yap
-        }
-        if (searchQuery != '') {
-            console.log(videosSearch)
-            console.log('salam dumbp')
-        }
-    }, [searchQuery]);
+        fetchVideosAndChannels(); // Yeni arama yap
+    }, []);
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
