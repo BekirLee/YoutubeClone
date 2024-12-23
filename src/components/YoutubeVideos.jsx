@@ -1,6 +1,7 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
+import { SearchContext } from "../context/SearchContext";
 
 function YouTubeVideos() {
     const [videos, setVideos] = useState([]);
@@ -8,7 +9,10 @@ function YouTubeVideos() {
     const [loading, setLoading] = useState(false);
     const observerRef = useRef(null);
 
-    const API_KEY = "AIzaSyDcTsHci748ZR0kRdX7qK1jGZh9Vnno7g4"; // API Key'i buraya yazın.
+    const { videosSearch } = useContext(SearchContext);
+
+    const { searchQuery } = useContext(SearchContext);
+    const API_KEY = "AIzaSyDcTsHci748ZR0kRdX7qK1jGZh9Vnno7g4";
 
     const fetchVideosAndChannels = async (pageToken = null) => {
         setLoading(true);
@@ -56,8 +60,17 @@ function YouTubeVideos() {
     };
 
     useEffect(() => {
-        fetchVideosAndChannels();
-    }, []);
+        // console.log(searchQuery)
+        // if (se) { }
+        if (searchQuery == '') {
+            // fetchVideosAndChannels(); // Yeni arama yap
+            fetchVideosAndChannels(); // Yeni arama yap
+        }
+        if (searchQuery != '') {
+            console.log(videosSearch)
+            console.log('salam dumbp')
+        }
+    }, [searchQuery]);
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
