@@ -15,12 +15,23 @@ function Header() {
     const navigate = useNavigate();
 
     const handleSearch = (event) => {
-        event.preventDefault(); // Sayfanın yeniden yüklenmesini engeller
+        event.preventDefault();
         navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
     };
+
     const sectionHide = () => {
-        let section = document.querySelector(".sections");
+        let section = document.querySelector(".guideContainer");
+        let section2 = document.querySelector(".section2");
+        let searchQueryPageContainer = document.querySelector(".searchQueryPageContainer");
+
         section.classList.toggle("hidden");
+        section.classList.toggle("transition");
+        section.classList.toggle("ease-in");
+        section2.classList.toggle("hidden");
+        section2.classList.toggle("-translate-x-full");
+        section2.classList.toggle("transform");
+        section2.classList.toggle("transition-transform");
+        // searchQueryPageContainer.classList.toggle("bg-[#00000080]");
     }
     return (
 
@@ -103,6 +114,7 @@ function Header() {
                     <div className="rounded-full text-white w-[31px] h-[31px] flex items-center justify-center bg-blue-700 m-auto mt-[6px]">N</div>
                 </div>
             </div>
+
             {/* </div> */}
         </div>
     )
