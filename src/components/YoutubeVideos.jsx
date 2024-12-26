@@ -112,12 +112,19 @@ function YouTubeVideos() {
                         {parseDuration(video.contentDetails.duration)}
                     </div>
 
+
                     <Link to={`/videos?id=${video.id}`}>
                         <img
                             src={video.snippet.thumbnails.medium.url}
                             alt={video.snippet.title}
                             className="rounded-lg w-full"
-                        />
+                            />
+                        <div className="absolute">
+                            {
+                                console.log(video.snippet.publishedAt.toString())
+                            }
+                            {console.log(video)}
+                        </div>
                     </Link>
 
                     {/* {hover olanda videolara preview video} cox RAM yeyir yolun tap*/}
