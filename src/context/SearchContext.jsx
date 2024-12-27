@@ -9,6 +9,7 @@ export const SearchProvider = ({ children }) => {
     return (
         <SearchContext.Provider value={{ searchQuery, setSearchQuery, videosSearch, setVideos }}>
             {children}
+            {console.log(children)}
         </SearchContext.Provider>
     );
 };
