@@ -12,7 +12,7 @@ function Videos() {
             {
                 <div className="">
                     <Header />
-                    <CurrentVideo />
+                    <CurrentVideo/>
                 </div>
             }
 
