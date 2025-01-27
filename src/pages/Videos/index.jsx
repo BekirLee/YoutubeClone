@@ -9,12 +9,12 @@ function Videos() {
     // console.log(videoId)
 
     return (
-        <div className="container bg-[#0f0f0f] w-full h-full">
+        <div className="bg-[#0f0f0f] h-full">
             {
-                <div className="w-full">
+                <>
                     <Header />
                     <PlayinVideoAndOtherVideos/>
-                </div>
+                </>
             }
 
         </div >

@@ -16,9 +16,9 @@ function CurrentVideo() {
     }
     currentVideoFetch();
     return (
-        <div className='w-full'>
+        <div className='p-24 pr-8 pl-4'>
 
-            < div className="w-[800px] max-w-4xl aspect-video" >
+            < div className="w-[800px] max-w-4xl aspect-video rounded-lg overflow-hidden">
                 {/* YouTube Embed Oynatıcı */}
                 < iframe
                     width="100%"
