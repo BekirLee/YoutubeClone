@@ -100,6 +100,25 @@ function YouTubeVideos() {
             }:${seconds.padStart(2, "0")}`;
     };
 
+    const publishedAt = (videoPublishedAt) => {
+        const publishedDate = new Date(videoPublishedAt);
+        const now = new Date();
+        const elapsed = Math.floor((now - publishedDate) / 1000);
+
+        if (elapsed < 60) {
+            return `${elapsed} seconds ago`;
+        } else if (elapsed < 3600) {
+            return `${Math.floor(elapsed / 60)} minutes ago`;
+        } else if (elapsed < 86400) {
+            return `${Math.floor(elapsed / 3600)} hours ago`;
+        } else if (elapsed < 2592000) {
+            return `${Math.floor(elapsed / 86400)} days ago`;
+        } else if (elapsed < 31536000) {
+            return `${Math.floor(elapsed / 2592000)} months ago`;
+        } else {
+            return `${Math.floor(elapsed / 31536000)} years ago`;
+        }
+    };
 
     return (
         <div className="relative top-[175px] left-[240px] bg-[#0f0f0f] z-[9] grid grid-cols-3 w-[1130px]">
@@ -108,7 +127,7 @@ function YouTubeVideos() {
                     key={video.id}
                     className="mb-14 mr-[35px] relative group"
                 >
-                    <div className="absolute text-white bg-black rounded-lg p-0.5 bottom-28 right-2">
+                    <div className="absolute text-white bg-[#0000008f] rounded-lg p-0.5 bottom-28 right-2 text-[14px]">
                         {parseDuration(video.contentDetails.duration)}
                     </div>
 
@@ -118,10 +137,9 @@ function YouTubeVideos() {
                             src={video.snippet.thumbnails.medium.url}
                             alt={video.snippet.title}
                             className="rounded-lg w-full"
-                            />
-                        <div className="absolute">
+                        />
+                        <div className="absolute text-white">
                             {
-                                console.log(video.snippet.publishedAt.toString())
                             }
                             {console.log(video)}
                         </div>
@@ -176,6 +194,11 @@ function YouTubeVideos() {
                                     <div className="flex gap-2 pt-1.5">
                                         <h5 className="text-sm text-gray-300 ">
                                             {formatViewCount(video.statistics.viewCount.toLocaleString())} Views
+                                        </h5>
+                                        <h5 className="text-sm text-gray-300 ">
+                                            {
+                                                publishedAt(video.snippet.publishedAt)
+                                            }
                                         </h5>
                                     </div>
                                 </div>

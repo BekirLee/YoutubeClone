@@ -125,7 +125,7 @@ function SearchQuery() {
     const getElapsedTime = (publishedAt) => {
         const publishedDate = new Date(publishedAt);
         const now = new Date();
-        const elapsed = Math.floor((now - publishedDate) / 1000); // Elapsed time in seconds
+        const elapsed = Math.floor((now - publishedDate) / 1000);
 
         if (elapsed < 60) {
             return `${elapsed} seconds ago`;
@@ -141,9 +141,6 @@ function SearchQuery() {
             return `${Math.floor(elapsed / 31536000)} years ago`;
         }
     };
-    // const shortsVideos = async () => {
-
-    // }
 
 
 
