@@ -128,21 +128,19 @@ function ScrolableVideos() {
                             className="rounded-lg w-[198px] h-[114px]"
                         />
                     }
-                    <div className="absolute text-white bg-[#0000008f] rounded-lg p-0.5 bottom-[5px] right-[300px] text-[14px]">
+                    <div className="absolute text-white bg-[#0000008f] rounded-lg p-0.5 bottom-[5px] right-[220px] text-[14px]">
                         {parseDuration(video.contentDetails.duration)}
                     </div>
                     {
                         <div className="">
                             <Link to={`/videos?id=${video.id}`}>
                                 <div className='pl-1 w-[215px]'>
-                                    <h3 className="text-white h-11">
-                                        <span className="font-roboto overflow-hidden block">
-                                            {video.snippet.title.length > 50
-                                                ? video.snippet.title.slice(0, 50) + "..."
-                                                : video.snippet.title}
-                                        </span>
+                                    <h3 className="text-white h-11 font-roboto overflow-hidden block text-[15px] font-bold">
+                                        {video.snippet.title.length > 50
+                                            ? video.snippet.title.slice(0, 50) + "..."
+                                            : video.snippet.title}
                                     </h3>
-                                    <h5 className="text-sm text-gray-300 pt-1.5">
+                                    <h5 className="text-sm text-gray-300 pt-1.5 whitespace-nowrap">
                                         <Link to={`/channel?id=${video.snippet.channelId}`}>
                                             {video.snippet.channelTitle}
                                         </Link>

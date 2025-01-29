@@ -179,12 +179,10 @@ function YouTubeVideos() {
                         <div className="contentInfo flex w-full justify-between relative">
                             <Link to={`/videos?id=${video.id}`}>
                                 <div>
-                                    <h3 className="text-white h-11">
-                                        <span className="font-roboto overflow-hidden block">
-                                            {video.snippet.title.length > 50
-                                                ? video.snippet.title.slice(0, 50) + "..."
-                                                : video.snippet.title}
-                                        </span>
+                                    <h3 className="text-white h-11 font-roboto overflow-hidden block t-[25px] font-bold pt-[1px]">
+                                        {video.snippet.title.length > 50
+                                            ? video.snippet.title.slice(0, 50) + "..."
+                                            : video.snippet.title}
                                     </h3>
                                     <h5 className="text-sm text-gray-300 pt-1.5">
                                         <Link to={`/channel?id=${video.snippet.channelId}`}>
