@@ -17,4 +17,8 @@
     color: grey;
   }
 
+  .scrollbar-thing{
+    /* background-color: transparent; */
+    scrollbar-color: red;
+  }
 }

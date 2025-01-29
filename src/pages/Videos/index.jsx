@@ -9,7 +9,7 @@ function Videos() {
     // console.log(videoId)
 
     return (
-        <div className="bg-[#0f0f0f] h-screen overflow-y-scroll scrollbar scrollbar-thumb-[#f1f1f18e] scrollbar-track-[#0f0f0f]">
+        <div className="">
             {
                 <>
                     <Header />
