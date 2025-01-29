@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom';
 // import 'dotenv/config';
 
@@ -7,18 +7,26 @@ import { useSearchParams } from 'react-router-dom';
 // import API_KEY from '../../.env';c
 
 function CurrentVideo() {
+    // let videoItems;
+
+    const [videoData, setVideoData] = useState(null);
     const [searchParams] = useSearchParams();
     const videoId = searchParams.get('id'); // Query parametresinden videoId'yi al
     const apikey = import.meta.env.VITE_API_KEY;
     const currentVideoFetch = async () => {
         const res = await axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${apikey}`);
         console.log(res)
+        setVideoData(res.data.items[0])
     }
-    currentVideoFetch();
+    useEffect(
+        () => {
+            currentVideoFetch();
+        }, [])
+    // console.log(videoItems)
     return (
         <div className='p-24 pr-8 pl-4'>
 
-            < div className="w-[800px] max-w-4xl aspect-video rounded-lg overflow-hidden">
+            <div className="w-[800px] max-w-4xl aspect-video rounded-lg overflow-hidden">
                 {/* YouTube Embed Oynatıcı */}
                 < iframe
                     width="100%"
@@ -30,6 +38,11 @@ function CurrentVideo() {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                 ></iframe >
+            </div>
+
+            <div className="text-[21px] text-white font-bold leading-8">
+                <h3>{videoData ?
+                    videoData.snippet.title : ''}</h3>
             </div>
         </div>
     )

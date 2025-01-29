@@ -9,11 +9,11 @@ function Videos() {
     // console.log(videoId)
 
     return (
-        <div className="">
+        <div className="scrollbar scrollbar-track-slate-950 scrollbar-thumb-red-700">
             {
                 <>
                     <Header />
-                    <PlayinVideoAndOtherVideos/>
+                    <PlayinVideoAndOtherVideos />
                 </>
             }
 
