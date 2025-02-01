@@ -95,13 +95,13 @@ function CurrentVideo() {
                     </div>
 
                     <div className="btn">
-                        <button>
+                        <button className='bg-white hover:bg-[#ffffffd8] rounded-full w-[60px] text-black font-bold pt-1 pb-1'>
                             Join
                         </button>
                     </div>
 
-                    <div className="btn">
-                        <button>
+                    <div className="btn bg-grey hover:bg-[#ffffffd8] rounded-full w-[60px] text-black font-bold pt-1 pb-1">
+                        <button className>
                             Subscribe
                         </button>
                     </div>
