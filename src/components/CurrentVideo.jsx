@@ -112,13 +112,20 @@ function CurrentVideo() {
                     </div>
 
                     <div className="share">
-                        <button></button>
+                        <button>
+                            Share
+                        </button>
                     </div>
 
                     <div className="bars"></div>
                 </div>
 
-                <div className="descriptionAndOthers"></div>
+                <div className="descriptionAndOthers bg-gray-200">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae iure perferendis maxime iste nisi dolores quo laboriosam at! Vel facilis quam perferendis nulla animi explicabo. Deserunt non dicta ullam et.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quis, quas in repellat reprehenderit excepturi, eos cum quo eveniet ab architecto voluptatem, saepe ratione! Animi voluptas doloribus corrupti ut? Earum!
+                    Id aut eveniet illum sapiente delectus voluptates non dolorum tempore in sed temporibus illo itaque saepe distinctio vitae, quis aliquam eum veniam iure cumque ab quam maiores ipsam. Nobis, voluptatem?
+                    Esse magnam illo, eos officiis expedita minus molestias aliquid voluptates autem cupiditate numquam pariatur, fuga neque, hic distinctio reprehenderit aliquam quas omnis quos ut recusandae deserunt ullam. Veritatis, reprehenderit magni!
+                </div>
 
                 <div className="comments"></div>
             </div>
