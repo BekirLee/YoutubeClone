@@ -118,7 +118,7 @@ function ScrolableVideos() {
         }
     };
     return (
-        <div className='w-[412px] mt-24'>
+        <div className='w-[426px] mt-24'>
             {videos.map((video) => (
                 <div className="flex mb-6 relative">
                     {
@@ -128,7 +128,7 @@ function ScrolableVideos() {
                             className="rounded-lg w-[198px] h-[114px]"
                         />
                     }
-                    <div className="absolute text-white bg-[#0000008f] rounded-lg p-0.5 bottom-[5px] right-[220px] text-[14px]">
+                    <div className="absolute text-white bg-[#0000008f] rounded-lg p-0.5 bottom-[5px] right-[235px] text-[14px]">
                         {parseDuration(video.contentDetails.duration)}
                     </div>
                     {

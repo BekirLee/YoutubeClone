@@ -24,7 +24,7 @@ function SearchQuery() {
             response.data.items.forEach(videoDetail => {
                 videoDetails[videoDetail.id] = videoDetail; // Store video details by ID
                 // console.log(object)
-                console.log(videoDetail)
+                // console.log(videoDetail) 
                 // videos.filter((founded) => { 
                 //     if (founded.id.videoId === video.id) {
                 //         founded.details = video;
@@ -35,7 +35,7 @@ function SearchQuery() {
                 //     }
                 // })
             });
-            console.log(videoDetails)
+            // console.log(videoDetails)
 
             // console.log(videoDetails)
             return videoDetails;
@@ -90,7 +90,7 @@ function SearchQuery() {
                 channelAvatar: channels[video.snippet.channelId],
                 details: videoDetails[video.id.videoId] || {}, // Add video details
             }));
-            console.log(combinedData)
+            // console.log(combinedData)
 
             setVideos(combinedData);
 
@@ -153,7 +153,7 @@ function SearchQuery() {
         <div className="relative top-[175px] left-[110px] bg-[#0f0f0f] z-[9] grid grid-cols-1 w-[1130px]">
             {videos.map((video, index) => (
                 <div key={index} className="mb-5 relative group flex">
-                    <div className="absolute text-white bg-black rounded-lg p-0.5 bottom-2.5 right-[640px]">
+                    <div className="absolute text-white bg-[#0000008f] rounded-lg p-0.5 bottom-2.5 right-[640px]">
                         {parseDuration(video.details.contentDetails.duration)}
                     </div>
 
@@ -165,7 +165,7 @@ function SearchQuery() {
                                 alt={video.snippet.title}
                                 className="rounded-lg w-full h-full"
                             />
-                            {console.log(video)}
+                            {/* {console.log(video)} */}
                         </Link>
                     </div>
                     <div className="content flex items-center mt-2 h-40 ml-4">
@@ -193,7 +193,7 @@ function SearchQuery() {
                                         {video.channelAvatar ? (
                                             <Link to={`/channel?id=${video.snippet.channelId}`}>
                                                 <img
-                                                    src={video.channelAvatar}
+                                                    src={video.channelAvatar ? video.channelAvatar : 'hello'}
                                                     alt={video.snippet.channelTitle}
                                                     className="rounded-full w-full"
                                                 />
