@@ -17,8 +17,12 @@
     color: grey;
   }
 
-  .scrollbar-thing{
+  .scrollbar-thing {
     /* background-color: transparent; */
     scrollbar-color: red;
   }
+}
+
+@theme {
+  --font-roboto: "Roboto", sans-serif;
 }
