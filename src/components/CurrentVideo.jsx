@@ -216,7 +216,11 @@ function CurrentVideo() {
                             <button className='like hover:bg-[#fff3] w-full pl-5 pr-2 rounded-l-full flex items-center'
                                 onClick={likeClick}>
                                 {
-                                    liked ? <AiOutlineLike style={{ width: "25px", height: "25px" }} /> : <BiSolidLike style={{ width: "25px", height: "25px" }} />
+                                    liked
+                                        ?
+                                        <AiOutlineLike style={{ width: "25px", height: "25px" }} />
+                                        :
+                                        <BiSolidLike style={{ width: "25px", height: "25px" }} />
                                 }
 
                                 {formatViewCount(likes)}
@@ -225,7 +229,11 @@ function CurrentVideo() {
                             <button className='dislike hover:bg-[#fff3] w-full pl-5 rounded-r-full'
                                 onClick={dislikeClick}>
                                 {
-                                    disliked ? <AiOutlineDislike style={{ width: "25px", height: "25px" }} /> : <AiFillDislike style={{ width: "25px", height: "25px" }} />
+                                    disliked
+                                        ?
+                                        <AiOutlineDislike style={{ width: "25px", height: "25px" }} />
+                                        :
+                                        <AiFillDislike style={{ width: "25px", height: "25px" }} />
                                 }
 
 
@@ -274,20 +282,26 @@ function CurrentVideo() {
                     </div>
                     <div className="commentbox text-sm/6">
 
-                        {descBoxClicked ? (
-                            videoData?.snippet?.description
-                        ) : (
-                            <>
-                                {videoData?.snippet?.description.slice(0, 243)}
-                                <span className="font-bold cursor-pointer">... more</span>
-                            </>
-                        )}
+                        {descBoxClicked ?
+                            (
+                                videoData?.snippet?.description
+                            ) :
+                            (
+                                <>
+                                    {videoData?.snippet?.description.slice(0, 243)}
+                                    <span className="font-bold cursor-pointer">... more</span>
+                                </>
+                            )}
                     </div>
 
                     <button
                         className="backComment">
                         {
-                            !descBoxClicked ? <div className="hidden"> Show less</div> : "Show less"
+                            !descBoxClicked
+                                ?
+                                <div className="hidden"> Show less</div>
+                                :
+                                "Show less"
                         }
                     </button>
                 </div>
