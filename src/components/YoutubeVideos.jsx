@@ -60,7 +60,7 @@ function YouTubeVideos() {
     useEffect(() => {
         // console.log(searchQuery)
         // if (se) { }
-        fetchVideosAndChannels(); 
+        fetchVideosAndChannels();
     }, []);
 
     useEffect(() => {

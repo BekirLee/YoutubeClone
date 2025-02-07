@@ -319,7 +319,7 @@ function CurrentVideo() {
                 </div>
             </div>
 
-            <div className="comments ">
+            <div className="comments w-[830px]">
                 <Comments />
             </div>
         </div>
