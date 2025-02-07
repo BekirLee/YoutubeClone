@@ -35,19 +35,21 @@ function Comments() {
             {
                 comments && comments.map((comment, index) => (
                     // {console.log(object)}
-                    <div className=" flex">
-
+                    <div className='flex'>
                         <img
                             src={comment?.snippet?.topLevelComment?.snippet?.authorProfileImageUrl}
-                            width={20} height={20}
+                            width={40} height={40}
                             alt="Profil Resmi"
                             className="rounded-full"
                         />
+                        <div className=" bg-transparent">
 
-                        <div className="">
-                            {comment?.snippet?.topLevelComment?.snippet?.authorDisplayName}
+
+                            <div className="text-white">
+                                {comment?.snippet?.topLevelComment?.snippet?.authorDisplayName}
+                            </div>
+                            <p className='text-white'>{comment?.snippet?.topLevelComment?.snippet?.textOriginal}</p>
                         </div>
-                        <p>{comment?.snippet?.topLevelComment?.snippet?.textOriginal}</p>
                     </div>
                 ))
             }
