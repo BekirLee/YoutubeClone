@@ -7,6 +7,7 @@ import { LiaDownloadSolid } from "react-icons/lia";
 import { IoCut } from "react-icons/io5";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import { BiSolidLike } from "react-icons/bi";
+import Comments from './Comments';
 // import 'dotenv/config';
 
 
@@ -136,6 +137,14 @@ function CurrentVideo() {
             return `${Math.floor(elapsed / 31536000)} years ago`;
         }
     };
+    const normalPublished = (date) => {
+        const publishedDate = new Date(date);
+        return publishedDate.toLocaleDateString("en-US", {
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        });
+    }
 
     const commentsBox = () => {
         setDeskBoxClicked(prev => !prev)
@@ -277,7 +286,10 @@ function CurrentVideo() {
                             {formatViewCount(views)}
                         </div>
                         <div className="">
-                            {publishedAt(videoData?.snippet?.publishedAt)}
+                            {!descBoxClicked ?
+                                publishedAt(videoData?.snippet?.publishedAt)
+                                : normalPublished(videoData?.snippet?.publishedAt)
+                            }
                         </div>
                     </div>
                     <div className="commentbox text-sm/6">
@@ -308,6 +320,7 @@ function CurrentVideo() {
             </div>
 
             <div className="comments ">
+                <Comments />
             </div>
         </div>
     )
