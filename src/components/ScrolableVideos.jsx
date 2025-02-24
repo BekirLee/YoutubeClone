@@ -118,7 +118,7 @@ function ScrolableVideos() {
         }
     };
     return (
-        <div className='w-[426px] mt-24'>
+        <div className='w-[426px] mt-[6rem] mb-auto'>
             {videos.map((video) => (
                 <div className="flex mb-6 relative">
                     {
