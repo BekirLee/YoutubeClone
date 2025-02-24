@@ -39,7 +39,7 @@ function Comments() {
                         <img
                             src={comment?.snippet?.topLevelComment?.snippet?.authorProfileImageUrl}
                             width={40} height={40}
-                            alt="Profil Resmi"
+                            alt="profile"
                             className="rounded-full"
                         />
                         <div className=" bg-transparent">

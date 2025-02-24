@@ -283,7 +283,9 @@ function CurrentVideo() {
                     onClick={commentsBox}>
                     <div className='flex gap-2'>
                         <div className="">
-                            {formatViewCount(views)}
+                            {!descBoxClicked ?
+                                formatViewCount(views) : parseInt(views).toLocaleString("de-DE")}
+                            {/* {console.log(typeof (views))} */}
                         </div>
                         <div className="">
                             {!descBoxClicked ?
