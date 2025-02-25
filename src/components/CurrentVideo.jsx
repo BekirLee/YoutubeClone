@@ -244,8 +244,6 @@ function CurrentVideo() {
                                         :
                                         <AiFillDislike style={{ width: "25px", height: "25px" }} />
                                 }
-
-
                             </button>
                         </div>
 
