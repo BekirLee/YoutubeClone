@@ -113,6 +113,7 @@ function SearchQuery() {
     };
 
     const parseDuration = (duration) => {
+        // duration.Number();
         const match = duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
         const hours = (match[1] || "").replace("H", "") || "0";
         const minutes = (match[2] || "").replace("M", "") || "0";
@@ -154,7 +155,8 @@ function SearchQuery() {
             {videos.map((video, index) => (
                 <div key={index} className="mb-5 relative group flex">
                     <div className="absolute text-white bg-[#0000008f] rounded-lg p-0.5 bottom-2.5 right-[640px]">
-                        {parseDuration(video.details.contentDetails.duration)}
+                        {parseDuration(video?.details?.contentDetails?.duration)}
+                        {console.log(typeof (video?.details?.contentDetails?.duration))}
                     </div>
 
                     <div className='!w-[500px] h-[280px]'>

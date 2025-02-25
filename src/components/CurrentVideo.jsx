@@ -162,7 +162,7 @@ function CurrentVideo() {
     }, commentsBox)
 
     return (
-        <div className='p-24 pr-8 pl-0'>
+        <div className='p-24 pr-8 pl-0 mb-auto'>
 
             <div className="w-[830px] max-w-4xl aspect-video rounded-lg overflow-hidden">
                 {/* YouTube Embed Oynatıcı */}

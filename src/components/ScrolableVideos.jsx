@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 
 import { Link } from 'react-router-dom';
 
@@ -8,6 +8,7 @@ function ScrolableVideos() {
     const [nextPageToken, setNextPageToken] = useState(null);
     const [loading, setLoading] = useState(false);
     const observerRef = useRef(null);
+    const observer = useRef()
 
 
     const API_KEY = "AIzaSyDcTsHci748ZR0kRdX7qK1jGZh9Vnno7g4";
@@ -56,6 +57,19 @@ function ScrolableVideos() {
             setLoading(false);
         }
     };
+
+    const lastVideo = useCallback((node) => {
+        if (loading) return;
+        if (observer.current) observer.current.disconnect();
+
+        observer.current = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting && nextPageToken) {
+                fetchVideosAndChannels(nextPageToken)
+            }
+        })
+        if (node) observer.current.observe(node);
+
+    }, [loading, nextPageToken])
     useEffect(() => {
         // console.log(searchQuery)
         // if (se) { }
@@ -119,8 +133,8 @@ function ScrolableVideos() {
     };
     return (
         <div className='w-[426px] mt-[6rem] mb-auto'>
-            {videos.map((video) => (
-                <div className="flex mb-6 relative">
+            {videos.map((video, index) => (
+                <div className="flex mb-6 relative" key={index} ref={index === videos.length - 1 ? lastVideo : null}>
                     {
                         <img
                             src={video.snippet.thumbnails.medium.url}
